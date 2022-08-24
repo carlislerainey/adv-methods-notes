@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.2 Test Statistics | Inference in Six Lessons</title>
+  <meta name="description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.2 Test Statistics | Inference in Six Lessons" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.2 Test Statistics | Inference in Six Lessons" />
+  
+  <meta name="twitter:description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  
+
+<meta name="author" content="Carlisle Rainey" />
+
+
+<meta name="date" content="2022-08-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-null-and-alternative-hypothesis.html"/>
+<link rel="next" href="evaluating-tests.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Inference<span></span></a></li>
+<li class="chapter" data-level="2" data-path="week-1.html"><a href="week-1.html"><i class="fa fa-check"></i><b>2</b> Week 1<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html"><i class="fa fa-check"></i><b>2.1</b> Maximum Likelihood<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#example-bernoulli-distribution"><i class="fa fa-check"></i><b>2.1.1</b> Example: Bernoulli Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-invariance-property.html"><a href="the-invariance-property.html"><i class="fa fa-check"></i><b>2.2</b> The Invariance Property<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-invariance-property.html"><a href="the-invariance-property.html#example-odds"><i class="fa fa-check"></i><b>2.2.1</b> Example: Odds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html"><i class="fa fa-check"></i><b>2.3</b> The Parametric Bootstrap<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html#example-toothpaste-cap-problm"><i class="fa fa-check"></i><b>2.3.1</b> Example: Toothpaste Cap Problm<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="properties-of-ml-estimators.html"><a href="properties-of-ml-estimators.html"><i class="fa fa-check"></i><b>2.4</b> Properties of ML Estimators<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="bias.html"><a href="bias.html"><i class="fa fa-check"></i><b>2.5</b> Bias<span></span></a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="bias.html"><a href="bias.html#example-bernoulli-distribution-1"><i class="fa fa-check"></i><b>2.5.1</b> Example: Bernoulli Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="consistency.html"><a href="consistency.html"><i class="fa fa-check"></i><b>2.6</b> Consistency<span></span></a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="consistency.html"><a href="consistency.html#example-illustrative"><i class="fa fa-check"></i><b>2.6.1</b> Example: Illustrative<span></span></a></li>
+<li class="chapter" data-level="2.6.2" data-path="consistency.html"><a href="consistency.html#example-bernoulli-odds"><i class="fa fa-check"></i><b>2.6.2</b> Example: Bernoulli Odds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="mvue-or-bue.html"><a href="mvue-or-bue.html"><i class="fa fa-check"></i><b>2.7</b> MVUE or BUE<span></span></a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="mvue-or-bue.html"><a href="mvue-or-bue.html#example-poisson-distribution"><i class="fa fa-check"></i><b>2.7.1</b> Example: Poisson Distribution<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deriving-point-estimates.html"><a href="deriving-point-estimates.html"><i class="fa fa-check"></i><b>3</b> Deriving Point Estimates<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html"><i class="fa fa-check"></i><b>3.1</b> Bayesian Inference<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html#mechanics"><i class="fa fa-check"></i><b>3.1.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="bayesian-inference.html"><a href="bayesian-inference.html#example-poisson-distribution-1"><i class="fa fa-check"></i><b>3.1.2</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="bayesian-inference.html"><a href="bayesian-inference.html#remarks"><i class="fa fa-check"></i><b>3.1.3</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="3.1.4" data-path="bayesian-inference.html"><a href="bayesian-inference.html#exercises"><i class="fa fa-check"></i><b>3.1.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="method-of-moments.html"><a href="method-of-moments.html"><i class="fa fa-check"></i><b>3.2</b> Method of Moments<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="method-of-moments.html"><a href="method-of-moments.html#mechanics-1"><i class="fa fa-check"></i><b>3.2.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="method-of-moments.html"><a href="method-of-moments.html#example-gamma-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Example: Gamma Distribution<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="method-of-moments.html"><a href="method-of-moments.html#example-toothpaste-cap-problem"><i class="fa fa-check"></i><b>3.2.3</b> Example: Toothpaste Cap Problem<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average"><i class="fa fa-check"></i><b>3.2.4</b> Example: Population Average<span></span></a></li>
+<li class="chapter" data-level="3.2.5" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average-and-sd"><i class="fa fa-check"></i><b>3.2.5</b> Example: Population Average and SD<span></span></a></li>
+<li class="chapter" data-level="3.2.6" data-path="method-of-moments.html"><a href="method-of-moments.html#example-german-tank-problem"><i class="fa fa-check"></i><b>3.2.6</b> Example: German Tank Problem<span></span></a></li>
+<li class="chapter" data-level="3.2.7" data-path="method-of-moments.html"><a href="method-of-moments.html#remarks-1"><i class="fa fa-check"></i><b>3.2.7</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="3.2.8" data-path="method-of-moments.html"><a href="method-of-moments.html#exercises-1"><i class="fa fa-check"></i><b>3.2.8</b> Exercises<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluating-point-estimates.html"><a href="evaluating-point-estimates.html"><i class="fa fa-check"></i><b>4</b> Evaluating Point Estimates<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bias-1.html"><a href="bias-1.html"><i class="fa fa-check"></i><b>4.1</b> Bias<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="bias-1.html"><a href="bias-1.html#example-sample-average"><i class="fa fa-check"></i><b>4.1.1</b> Example: Sample Average<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="bias-1.html"><a href="bias-1.html#example-poisson-distribution-2"><i class="fa fa-check"></i><b>4.1.2</b> Example: Poisson Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="consistency-1.html"><a href="consistency-1.html"><i class="fa fa-check"></i><b>4.2</b> Consistency<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="mvue-or-bue-1.html"><a href="mvue-or-bue-1.html"><i class="fa fa-check"></i><b>4.3</b> MVUE or BUE<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="evaluating-point-estimates-exercises.html"><a href="evaluating-point-estimates-exercises.html"><i class="fa fa-check"></i><b>4.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deriving-hypothesis-test.html"><a href="deriving-hypothesis-test.html"><i class="fa fa-check"></i><b>5</b> Deriving Hypothesis Test<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html"><i class="fa fa-check"></i><b>5.1</b> The Null (and Alternative) Hypothesis<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html#the-most-common-null-hypotheses"><i class="fa fa-check"></i><b>5.1.1</b> The Most Common Null Hypotheses<span></span></a></li>
+<li class="chapter" data-level="5.1.2" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html#errors"><i class="fa fa-check"></i><b>5.1.2</b> Errors<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="test-statistics.html"><a href="test-statistics.html"><i class="fa fa-check"></i><b>5.2</b> Test Statistics<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="test-statistics.html"><a href="test-statistics.html#power-function"><i class="fa fa-check"></i><b>5.2.1</b> Power Function<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="test-statistics.html"><a href="test-statistics.html#the-likelihood-ratio-test"><i class="fa fa-check"></i><b>5.2.2</b> The Likelihood Ratio Test<span></span></a></li>
+<li class="chapter" data-level="5.2.3" data-path="test-statistics.html"><a href="test-statistics.html#wald-test"><i class="fa fa-check"></i><b>5.2.3</b> Wald Test<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="evaluating-tests.html"><a href="evaluating-tests.html"><i class="fa fa-check"></i><b>5.3</b> Evaluating Tests<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html"><i class="fa fa-check"></i><b>5.4</b> Size of the LRT<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#p-values"><i class="fa fa-check"></i><b>5.4.1</b> <em>p</em>-Values<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#size-of-the-wald-test"><i class="fa fa-check"></i><b>5.4.2</b> Size of the Wald Test<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#size-of-the"><i class="fa fa-check"></i><b>5.4.3</b> Size of the<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ways-to-find-a-confidence-interval.html"><a href="ways-to-find-a-confidence-interval.html"><i class="fa fa-check"></i><b>6</b> Ways to Find a Confidence Interval<span></span></a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="ways-to-find-a-confidence-interval.html"><a href="ways-to-find-a-confidence-interval.html#bayesian-tests"><i class="fa fa-check"></i><b>6.0.1</b> Bayesian Tests<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="appendix-code-for-beta-prior.html"><a href="appendix-code-for-beta-prior.html"><i class="fa fa-check"></i><b>7</b> Appendix: Code for Beta Prior<span></span></a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Inference in Six Lessons</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="test-statistics" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Test Statistics<a href="test-statistics.html#test-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose a random sample <span class="math inline">\(X\)</span> from <span class="math inline">\(f(x; \theta)\)</span> (a pmf or pdf that with parameter <span class="math inline">\(\theta\)</span>). Let <span class="math inline">\(T = r(X)\)</span> and reject the null hypothesis if <span class="math inline">\(T \in R\)</span>. The <span class="math inline">\(T\)</span> is a <strong>test statistic</strong> and R is the <strong>rejection region</strong> of the test.</p>
+<div id="power-function" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Power Function<a href="test-statistics.html#power-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>power function</strong> of a hypothesis test is the probability that the researcher rejects the hypothesis given the true parameter. Formally, we write $() = (T R ) = ( H_0 ) $.</p>
+<p>Notice that we want the power function to be one (or as close as possible) for values of <span class="math inline">\(\theta\)</span> that are consistent with the null hypothesis. Conversely, we want the power function to be zero (or as close as possible) for values of <span class="math inline">\(\theta\)</span> that are <em>in</em>consistent with the null hypothesis.</p>
+<p>To see the power function in action, suppose you suspect that I might be a cheater and using a coin biased toward heads in a game of chance. I hand over my coin. You plan to toss it 10 times and to reject the fair-coin hypothesis (and call me a cheater) if you see at least 6 heads in 10 tosses. Then the power function of of the test is <span class="math inline">\(\Pr(\text{more than 6 heads in 10 tosses} \mid \pi)\)</span>.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="test-statistics.html#cb53-1" aria-hidden="true" tabindex="-1"></a>pi <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">11</span>)</span>
+<span id="cb53-2"><a href="test-statistics.html#cb53-2" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> pi)</span>
+<span id="cb53-3"><a href="test-statistics.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="test-statistics.html#cb53-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pi, power)</span>
+<span id="cb53-5"><a href="test-statistics.html#cb53-5" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kable</span>(data, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+pi
+</th>
+<th style="text-align:right;">
+power
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.6
+</td>
+<td style="text-align:right;">
+0.63
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.7
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.9
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="test-statistics.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb54-2"><a href="test-statistics.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> pi, <span class="at">y =</span> power)) <span class="sc">+</span> </span>
+<span id="cb54-3"><a href="test-statistics.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="inference_files/figure-html/unnamed-chunk-18-1.png" width="288" /></p>
+<p>This power function shows that when my coin is fair (<span class="math inline">\(\pi = 0.5\)</span>), the probability that you will reject that hypothesis and call me a cheater is about 0.38–that seems way to high.</p>
+<p>So you might choose to call me a cheater only if 9 or more of the 10 tosses are heads. Here’s that power function:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="test-statistics.html#cb55-1" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">8</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> pi)</span>
+<span id="cb55-2"><a href="test-statistics.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="test-statistics.html#cb55-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pi, power)</span>
+<span id="cb55-4"><a href="test-statistics.html#cb55-4" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kable</span>(data, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+pi
+</th>
+<th style="text-align:right;">
+power
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.6
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.7
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+0.38
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.9
+</td>
+<td style="text-align:right;">
+0.74
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="test-statistics.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> pi, <span class="at">y =</span> power)) <span class="sc">+</span> </span>
+<span id="cb56-2"><a href="test-statistics.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="inference_files/figure-html/unnamed-chunk-19-1.png" width="288" /></p>
+<p>That looks a bit better–there’s only about a 1% chance that you’ll call me a cheater. But there’s another problem… even if my coin has a substantial bias toward heads, say <span class="math inline">\(\pi = 0.5\)</span>, there’s only a 5% chance that you’ll (correctly) call me a cheater.</p>
+<p>This highlights a trade-off between the two types of errors. As you design a test to make fewer Type I errors (incorrect rejection), it will make more Type II errors (lost opportunity). As you design a test to make fewer Type II errors, it will make more Type I errors.</p>
+<p>But because of the conclusions we draw, the errors are not equivalent. A Type I error (incorrect rejection) is a more costly mistake than a Type II error (lost opportunity).</p>
+<p>Because of the asymmetry in cost, we design tests to control the Type I error rate. Then, once we’ve controlled the Type I error rate to an acceptably low level, we minimize the Type II error rate as much as we can.</p>
+<p>We say that a test has <strong>size</strong> <span class="math inline">\(\alpha\)</span> if <span class="math inline">\(\text{sup}_{\theta \in \Theta_0} \beta(\theta) = \alpha\)</span>. That is, the Type I error rate is at most <span class="math inline">\(\alpha\)</span> across all values of <span class="math inline">\(\theta\)</span> consistent with the null hypothesis.</p>
+<p>Similarly, we say that a test has <strong>level</strong> <span class="math inline">\(\alpha\)</span> if <span class="math inline">\(\text{sup}_{\theta \in \Theta_0} \beta(\theta) \leq \alpha\)</span>. Notice the inequality. That is, the Type I error rate never exceeds (but doesn’t necessarily reach) <span class="math inline">\(\alpha\)</span> across the values of <span class="math inline">\(\theta\)</span> consistent with the null hypothesis. In some cases, we cannot construct a size <span class="math inline">\(\alpha\)</span> test, so we instead really on the less precise idea of a “level.”</p>
+<p>The key idea is this: We choose the size/level of the test so that the decision to reject the null hypothesis is <em>convincing</em>. It’s a bit of a logical leap, but this is the idea: We would rarely observe data more unusual than this if the null hypothesis were true, therefore we conclude that the null hypothesis is false.</p>
+<p>By convention, we use size-0.05 tests in political science. Occasionally, we use 0.01 or 0.10, but 0.05 is the <em>overwhelming</em> standard.</p>
+</div>
+<div id="the-likelihood-ratio-test" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> The Likelihood Ratio Test<a href="test-statistics.html#the-likelihood-ratio-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recall that for a random sample <span class="math inline">\(X = \{x_1, ..., x_n\}\)</span>, the likelihood function is <span class="math inline">\(L(\theta) = \prod_{i = 1}^n f(x_i \mid \theta)\)</span>.</p>
+<p>The <strong>likelihood ratio (LR) test statistic</strong> for <span class="math inline">\(H_0 : \theta \in \Theta_0\)</span> is <span class="math inline">\(\lambda_{LR} = \dfrac{\text{sup}_{\Theta_0} L(\theta)}{\text{sup}_{\Theta} L(\theta)}\)</span>.</p>
+<p>It’s helpful to think of <span class="math inline">\(\text{sup}_{\Theta} L(\theta)\)</span> as the largest likelihood across the <em>entire parameter space</em> <span class="math inline">\(\Theta\)</span>. If we let <span class="math inline">\(\hat{\theta}^{ML}\)</span> represent our usual ML estimate, then <span class="math inline">\(\text{sup}_{\Theta} L(\theta) = L(\hat{\theta}^{ML})\)</span>.</p>
+<p>On the other hand, <span class="math inline">\(\text{sup}_{\Theta_0} L(\theta)\)</span> is the largest likelihood across the portion of the parameter space <em>consistent with the null hypothesis</em>. We are still looking for the value that maximizes the likelihood of the observed data, but we are maximizing across the space <em>consistent with the null hypothesis</em> (not the entire parameter space).</p>
+<p>The <strong>likelihood ratio (LR) test</strong> has rejection region defined by <span class="math inline">\(\lambda_{LR} \leq c\)</span> for <span class="math inline">\(c \in [0, 1]\)</span>.</p>
+<p>If the likelihood of the data is much larger without the restriction in effect, then it’s intuitive that the data are inconsistent with the null hypothesis.</p>
+<p>But how can we choose <span class="math inline">\(c\)</span> to achieve a size-<span class="math inline">\(\alpha\)</span> or size-0.05 test?</p>
+<p>It turns out that transforming <span class="math inline">\(\lambda_{LR}\)</span> slightly helps us here. Define <span class="math inline">\(\lambda^*_{LR} = -2 \log \lambda_{LR}\)</span>. (Authors inconsistently refer to <span class="math inline">\(\lambda_{LR}\)</span> and <span class="math inline">\(\lambda^*_{LR}\)</span> as “the likelihood ratio”). Notice that <span class="math inline">\(\lambda_{LR}\)</span> and <span class="math inline">\(\lambda^*_{LR}\)</span> have an inverse relationship; smaller values of <span class="math inline">\(\lambda_{LR}\)</span> are inconsistent with the null hypothesis, but larger values of <span class="math inline">\(\lambda^*_{LR}\)</span> are inconsistent with the null hypothesis. Now we’ll reject the null hypothesis if <span class="math inline">\(\lambda^*_{LR} \geq c^*\)</span> (where <span class="math inline">\(c^* = -2 \log c\)</span>).</p>
+<p>To make the LR test a size-<span class="math inline">\(\alpha\)</span> test, we need to choose rejection threshold <span class="math inline">\(c^*\)</span> so that <span class="math inline">\(\text{sup}_{\theta \in \Theta_0} \Pr(\lambda^*_{LR} \leq c^*) = \alpha\)</span>.</p>
+<p>To establish this, we need to understand the distribution of <span class="math inline">\(\lambda^*_{LR}\)</span> under repeated sampling. Fortunately, there’s a <em>very general</em> result for this.</p>
+<p>Suppose the researcher has a point null hypothesis <span class="math inline">\(H_0: \theta = \theta_0\)</span>, then under certain (but not harsh) regularity conditions, <span class="math inline">\(-2 \log \lambda_{LR} \xrightarrow{d} \chi^2_1\)</span>. That is, the distribution of <span class="math inline">\(\lambda^*_{LR}\)</span> converges to the Chi-squared distribution with one degree of freedom.</p>
+<p>Suppose we used <span class="math inline">\(\lambda^*_{LR} \geq 2\)</span> as the rejection region, then we can compute the chance of an incorrect rejection if the null hypothesis were indeed true as <span class="math inline">\(\int_2^\infty f_{\chi^2_1}(x \mid \theta = \theta_0) dx\)</span> or <code>1 - pchisq(2, df = 1)</code>.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="test-statistics.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">2</span>, <span class="at">df =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1572992</code></pre>
+<p>We can see that rejecting if <span class="math inline">\(\lambda^*_{LR} \geq 2\)</span> would make the error rate too high–we want 5%.</p>
+<p>We can use the inverse cdf function in R to find the threshold that would make the rejection rate 5% under the null hypothesis.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="test-statistics.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="at">df =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 3.841459</code></pre>
+<p>That’s the the test: reject the null hypothesis that <span class="math inline">\(\theta = \theta_0\)</span> if <span class="math inline">\(\lambda^*_{LR} \geq 3.84\)</span>.</p>
+</div>
+<div id="wald-test" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Wald Test<a href="test-statistics.html#wald-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose that the researcher has a point null hypothesis <span class="math inline">\(H_0: \theta = \theta_0\)</span>, an estimate <span class="math inline">\(\hat{\theta}\)</span> of <span class="math inline">\(\theta\)</span>, and an estimate of the standard deviation of the estimate <span class="math inline">\(\widehat{\text{SD}}(\hat{\theta})\)</span>. Then the Wald test statistic has the form <span class="math inline">\(W = \dfrac{\hat{\theta} - \theta_0}{\widehat{\text{SD}}(\hat{\theta})}\)</span>.</p>
+<p>Notice that as <span class="math inline">\(\hat{\theta}\)</span> gets further from the hypothesized value (relative to the <span class="math inline">\(\widehat{\text{SD}}(\hat{\theta})\)</span>), the test statistic <span class="math inline">\(W\)</span> grows in magnitude. Thus, we might use the reject the null hypothesis if <span class="math inline">\(|W| &gt; c\)</span> for <span class="math inline">\(c \geq 0\)</span>.</p>
+<div id="example-biased-coin" class="section level4 hasAnchor" number="5.2.3.1">
+<h4><span class="header-section-number">5.2.3.1</span> Example: Biased Coin<a href="test-statistics.html#example-biased-coin" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>I claim that my coin is fair; but you suspect I am a cheater. You want to test the null hypothesis that my coin is fair.</p>
+<p>So we toss my coin 10 times and obtain six heads. Treating the tosses as a independent Bernoulli random variables with parameter <span class="math inline">\(\pi\)</span>, we have a <span class="math inline">\(\hat{\pi}^{ML} = \frac{3}{5}\)</span>, so that <span class="math inline">\(\text{sup}_{\Theta} L(\theta) = L \left( \frac{3}{5} \right) = \left( \frac{3}{5} \right)^6 \times \left(\frac{2}{5} \right)^4 \approx 0.001194394\)</span>. On the other hand, <span class="math inline">\(\text{sup}_{\Theta_0} L(\theta) = L \left( \frac{1}{2} \right) = \left(\frac{1}{2} \right)^{10} \approx 0.0009765625\)</span>. (Because the null hypothesis is a point null, the sup portion of the numerator degenerates.) The we have <span class="math inline">\(\lambda_{LR} = \dfrac{\text{sup}_{\Theta_0} L(\theta)}{\text{sup}_{\Theta} L(\theta)} = \dfrac{0.0009765625}{0.001194394} \approx 0.817622\)</span>. This means that the likelihood of the data under the null hypothesis is about 82% of the unrestricted likelihood.</p>
+<p>It’s a bit unclear at the moment what to make of <span class="math inline">\(\lambda_{LR} \approx 0.82\)</span>. Should you reject the null hypothesis and call me a cheater. At the moment, an arbitrary threshold is fine. We might choose <span class="math inline">\(c = 0.9\)</span> and reject the the null hypothesis.</p>
+<p>But is that a good test? Before we can discuss whether that’s a good test, we need to cover a few more ideas.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-null-and-alternative-hypothesis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluating-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

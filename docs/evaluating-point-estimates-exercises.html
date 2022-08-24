@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.4 Exercises | Inference in Six Lessons</title>
+  <meta name="description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.4 Exercises | Inference in Six Lessons" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.4 Exercises | Inference in Six Lessons" />
+  
+  <meta name="twitter:description" content="Lecture notes covering the basics concepts of statistical inference for first-year political science PhD students." />
+  
+
+<meta name="author" content="Carlisle Rainey" />
+
+
+<meta name="date" content="2022-08-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mvue-or-bue-1.html"/>
+<link rel="next" href="deriving-hypothesis-test.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Inference</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Inference<span></span></a></li>
+<li class="chapter" data-level="2" data-path="week-1.html"><a href="week-1.html"><i class="fa fa-check"></i><b>2</b> Week 1<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html"><i class="fa fa-check"></i><b>2.1</b> Maximum Likelihood<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#example-bernoulli-distribution"><i class="fa fa-check"></i><b>2.1.1</b> Example: Bernoulli Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-invariance-property.html"><a href="the-invariance-property.html"><i class="fa fa-check"></i><b>2.2</b> The Invariance Property<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-invariance-property.html"><a href="the-invariance-property.html#example-odds"><i class="fa fa-check"></i><b>2.2.1</b> Example: Odds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html"><i class="fa fa-check"></i><b>2.3</b> The Parametric Bootstrap<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html#example-toothpaste-cap-problm"><i class="fa fa-check"></i><b>2.3.1</b> Example: Toothpaste Cap Problm<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="properties-of-ml-estimators.html"><a href="properties-of-ml-estimators.html"><i class="fa fa-check"></i><b>2.4</b> Properties of ML Estimators<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="bias.html"><a href="bias.html"><i class="fa fa-check"></i><b>2.5</b> Bias<span></span></a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="bias.html"><a href="bias.html#example-bernoulli-distribution-1"><i class="fa fa-check"></i><b>2.5.1</b> Example: Bernoulli Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="consistency.html"><a href="consistency.html"><i class="fa fa-check"></i><b>2.6</b> Consistency<span></span></a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="consistency.html"><a href="consistency.html#example-illustrative"><i class="fa fa-check"></i><b>2.6.1</b> Example: Illustrative<span></span></a></li>
+<li class="chapter" data-level="2.6.2" data-path="consistency.html"><a href="consistency.html#example-bernoulli-odds"><i class="fa fa-check"></i><b>2.6.2</b> Example: Bernoulli Odds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="mvue-or-bue.html"><a href="mvue-or-bue.html"><i class="fa fa-check"></i><b>2.7</b> MVUE or BUE<span></span></a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="mvue-or-bue.html"><a href="mvue-or-bue.html#example-poisson-distribution"><i class="fa fa-check"></i><b>2.7.1</b> Example: Poisson Distribution<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="deriving-point-estimates.html"><a href="deriving-point-estimates.html"><i class="fa fa-check"></i><b>3</b> Deriving Point Estimates<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html"><i class="fa fa-check"></i><b>3.1</b> Bayesian Inference<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html#mechanics"><i class="fa fa-check"></i><b>3.1.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="bayesian-inference.html"><a href="bayesian-inference.html#example-poisson-distribution-1"><i class="fa fa-check"></i><b>3.1.2</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="bayesian-inference.html"><a href="bayesian-inference.html#remarks"><i class="fa fa-check"></i><b>3.1.3</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="3.1.4" data-path="bayesian-inference.html"><a href="bayesian-inference.html#exercises"><i class="fa fa-check"></i><b>3.1.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="method-of-moments.html"><a href="method-of-moments.html"><i class="fa fa-check"></i><b>3.2</b> Method of Moments<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="method-of-moments.html"><a href="method-of-moments.html#mechanics-1"><i class="fa fa-check"></i><b>3.2.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="method-of-moments.html"><a href="method-of-moments.html#example-gamma-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Example: Gamma Distribution<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="method-of-moments.html"><a href="method-of-moments.html#example-toothpaste-cap-problem"><i class="fa fa-check"></i><b>3.2.3</b> Example: Toothpaste Cap Problem<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average"><i class="fa fa-check"></i><b>3.2.4</b> Example: Population Average<span></span></a></li>
+<li class="chapter" data-level="3.2.5" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average-and-sd"><i class="fa fa-check"></i><b>3.2.5</b> Example: Population Average and SD<span></span></a></li>
+<li class="chapter" data-level="3.2.6" data-path="method-of-moments.html"><a href="method-of-moments.html#example-german-tank-problem"><i class="fa fa-check"></i><b>3.2.6</b> Example: German Tank Problem<span></span></a></li>
+<li class="chapter" data-level="3.2.7" data-path="method-of-moments.html"><a href="method-of-moments.html#remarks-1"><i class="fa fa-check"></i><b>3.2.7</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="3.2.8" data-path="method-of-moments.html"><a href="method-of-moments.html#exercises-1"><i class="fa fa-check"></i><b>3.2.8</b> Exercises<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="evaluating-point-estimates.html"><a href="evaluating-point-estimates.html"><i class="fa fa-check"></i><b>4</b> Evaluating Point Estimates<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bias-1.html"><a href="bias-1.html"><i class="fa fa-check"></i><b>4.1</b> Bias<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="bias-1.html"><a href="bias-1.html#example-sample-average"><i class="fa fa-check"></i><b>4.1.1</b> Example: Sample Average<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="bias-1.html"><a href="bias-1.html#example-poisson-distribution-2"><i class="fa fa-check"></i><b>4.1.2</b> Example: Poisson Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="consistency-1.html"><a href="consistency-1.html"><i class="fa fa-check"></i><b>4.2</b> Consistency<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="mvue-or-bue-1.html"><a href="mvue-or-bue-1.html"><i class="fa fa-check"></i><b>4.3</b> MVUE or BUE<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="evaluating-point-estimates-exercises.html"><a href="evaluating-point-estimates-exercises.html"><i class="fa fa-check"></i><b>4.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deriving-hypothesis-test.html"><a href="deriving-hypothesis-test.html"><i class="fa fa-check"></i><b>5</b> Deriving Hypothesis Test<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html"><i class="fa fa-check"></i><b>5.1</b> The Null (and Alternative) Hypothesis<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html#the-most-common-null-hypotheses"><i class="fa fa-check"></i><b>5.1.1</b> The Most Common Null Hypotheses<span></span></a></li>
+<li class="chapter" data-level="5.1.2" data-path="the-null-and-alternative-hypothesis.html"><a href="the-null-and-alternative-hypothesis.html#errors"><i class="fa fa-check"></i><b>5.1.2</b> Errors<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="test-statistics.html"><a href="test-statistics.html"><i class="fa fa-check"></i><b>5.2</b> Test Statistics<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="test-statistics.html"><a href="test-statistics.html#power-function"><i class="fa fa-check"></i><b>5.2.1</b> Power Function<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="test-statistics.html"><a href="test-statistics.html#the-likelihood-ratio-test"><i class="fa fa-check"></i><b>5.2.2</b> The Likelihood Ratio Test<span></span></a></li>
+<li class="chapter" data-level="5.2.3" data-path="test-statistics.html"><a href="test-statistics.html#wald-test"><i class="fa fa-check"></i><b>5.2.3</b> Wald Test<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="evaluating-tests.html"><a href="evaluating-tests.html"><i class="fa fa-check"></i><b>5.3</b> Evaluating Tests<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html"><i class="fa fa-check"></i><b>5.4</b> Size of the LRT<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#p-values"><i class="fa fa-check"></i><b>5.4.1</b> <em>p</em>-Values<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#size-of-the-wald-test"><i class="fa fa-check"></i><b>5.4.2</b> Size of the Wald Test<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="size-of-the-lrt.html"><a href="size-of-the-lrt.html#size-of-the"><i class="fa fa-check"></i><b>5.4.3</b> Size of the<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ways-to-find-a-confidence-interval.html"><a href="ways-to-find-a-confidence-interval.html"><i class="fa fa-check"></i><b>6</b> Ways to Find a Confidence Interval<span></span></a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="ways-to-find-a-confidence-interval.html"><a href="ways-to-find-a-confidence-interval.html#bayesian-tests"><i class="fa fa-check"></i><b>6.0.1</b> Bayesian Tests<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="appendix-code-for-beta-prior.html"><a href="appendix-code-for-beta-prior.html"><i class="fa fa-check"></i><b>7</b> Appendix: Code for Beta Prior<span></span></a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Inference in Six Lessons</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="evaluating-point-estimates-exercises" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Exercises<a href="evaluating-point-estimates-exercises.html#evaluating-point-estimates-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:bias-exponential" class="exercise"><strong>Exercise 4.1  </strong></span>First, use a computer simulation to check whether the ML estimator <span class="math inline">\(\hat{\lambda} = \frac{1}{\text{avg}(x)}\)</span> of <span class="math inline">\(\lambda\)</span> for the exponential distribution is (at least approximately) unbiased. (See the example for the Poisson distribution above.) Second, prove that the ML estimator of <span class="math inline">\(\lambda\)</span> is biased. Third, check whether the ML estimator <span class="math inline">\(\hat{\mu} = \frac{1}{\hat{\lambda}}\)</span> of <span class="math inline">\(\mu = \frac{1}{\lambda}\)</span> is biased.</p>
+<p>Explain the implications for the analysis of UK government duration.</p>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="evaluating-point-estimates-exercises.html#cb46-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">4.0</span>      <span class="co"># the parameter we&#39;re trying to estimate</span></span>
+<span id="cb46-2"><a href="evaluating-point-estimates-exercises.html#cb46-2" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># the sample size we&#39;re using in each &quot;study&quot;</span></span>
+<span id="cb46-3"><a href="evaluating-point-estimates-exercises.html#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="evaluating-point-estimates-exercises.html#cb46-4" aria-hidden="true" tabindex="-1"></a>n_repeated_samples <span class="ot">&lt;-</span> <span class="dv">10000</span>  <span class="co"># the number of times we repeat the &quot;study&quot;</span></span>
+<span id="cb46-5"><a href="evaluating-point-estimates-exercises.html#cb46-5" aria-hidden="true" tabindex="-1"></a>lambda_hat <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_repeated_samples)  <span class="co"># a container </span></span>
+<span id="cb46-6"><a href="evaluating-point-estimates-exercises.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_repeated_samples) {</span>
+<span id="cb46-7"><a href="evaluating-point-estimates-exercises.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rexp</span>(sample_size, <span class="at">rate =</span> lambda)</span>
+<span id="cb46-8"><a href="evaluating-point-estimates-exercises.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  lambda_hat[i] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">mean</span>(x)</span>
+<span id="cb46-9"><a href="evaluating-point-estimates-exercises.html#cb46-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-10"><a href="evaluating-point-estimates-exercises.html#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="evaluating-point-estimates-exercises.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="co"># long-run average</span></span>
+<span id="cb46-12"><a href="evaluating-point-estimates-exercises.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(lambda_hat)  <span class="co"># hum... seems too big</span></span></code></pre></div>
+<pre><code>## [1] 4.436498</code></pre>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[ \frac{1}{\text{avg}(x)}\right] = E\left[ \frac{N}{\sum_{n = 1}^N x_n}\right] &amp;= N E \left[ \frac{1}{ \sum_{n = 1}^N  x_n} \right] \\
+\text{[notice the greater-than sign here]} \rightarrow  &amp; &gt;  N \left[ \frac{1}{ E \left( \sum_{n = 1}^N  x_n \right) } \right] \text{, by Jensen&#39;s inquality; } \frac{1}{x} \text{ is convex.}\\\\
+&amp; =  N \left[ \frac{1}{  \sum_{n = 1}^N  E(x_n)  } \right] \\
+&amp; =  N \left[ \frac{1}{  \sum_{n = 1}^N  \frac{1}{\lambda}  } \right] \\
+&amp; =  N \left[ \frac{1}{   \frac{N}{\lambda}  } \right] \\
+&amp; = \lambda
+\end{aligned}
+\]</span>
+Therefore the bias in <span class="math inline">\(\hat{\lambda}\)</span> is upward, as the simulation shows.</p>
+<p>Remember that we can transform ML estimators directly to obtain estimates of the transformations. The ML estimator <span class="math inline">\(\hat{\mu} = \frac{1}{\hat{\lambda}}\)</span> of the average duration <span class="math inline">\(\mu = \frac{1}{\lambda} = E(X)\)</span> is unbiased, though. The math works nearly identically as the math showing that the ML estimator for the toothpaste cap problem. It also follows directly from the fact that the sample average is an unbiased estimator of the population average.</p>
+</details>
+<div class="exercise">
+<p><span id="exr:consistency-govt-duration" class="exercise"><strong>Exercise 4.2  </strong></span>The ML estimator <span class="math inline">\(\hat{\lambda} = \frac{1}{\text{avg}(x)}\)</span> of <span class="math inline">\(\lambda\)</span> for the exponential distribution is consistent. Comment on the relevance for Exercise <a href="#exr:ml-govt-duration"><strong>??</strong></a>.</p>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+Consistency is not helpful for this problem. We have five observations. <em>At best</em>, consistency suggests an estimator will work well in large samples. A consistent estimator can be heavily biased in small samples.
+</details>
+<div class="exercise">
+<p><span id="exr:mvue-govt-duration" class="exercise"><strong>Exercise 4.3  </strong></span>Comment on the ML estimator <span class="math inline">\(\hat{\lambda} = \frac{1}{\text{avg}(x)}\)</span> of <span class="math inline">\(\lambda\)</span> for the exponential distribution and the ML estimator <span class="math inline">\(\hat{\mu} = \frac{1}{\hat{\lambda}}\)</span> of the <span class="math inline">\(\mu = \frac{1}{\lambda}\)</span>. Comment on the relevance for Exercise <a href="#exr:ml-govt-duration"><strong>??</strong></a>.</p>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<p>Both estimators are consistent. However, consistency is not helpful in small samples.</p>
+<p><span class="math inline">\(\hat{\mu}\)</span> is unbiased, and <span class="math inline">\(\hat{\lambda}\)</span> is biased. This leads us to prefer <span class="math inline">\(\hat{\mu}\)</span>. Further <span class="math inline">\(\hat{\mu}\)</span> is the MVUE, because it’s the sample average used to estimate the expected value of the distribution. MVUE is an excellent estimator and it’s unusually to prefer another. <span class="math inline">\(\hat{\mu}\)</span> has much better properties than <span class="math inline">\(\hat{\lambda}\)</span>—<span class="math inline">\(\hat{\mu}\)</span> is an MVUE, <span class="math inline">\(\hat{\lambda}\)</span> is just consistent.</p>
+<p>Perhaps more importantly, <span class="math inline">\(\hat{\mu}\)</span> is easier to interpret as the expected years a government will last. <span class="math inline">\(\hat{\lambda}\)</span> is a bit harder to interpret at the failures per year.</p>
+<p>Here’s a little simulation illustrating each estimator.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="evaluating-point-estimates-exercises.html#cb48-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.5</span>     <span class="co"># a guess at the value in the govt duration problem</span></span>
+<span id="cb48-2"><a href="evaluating-point-estimates-exercises.html#cb48-2" aria-hidden="true" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="dv">5</span>  <span class="co"># the sample size in the govt duration problem</span></span>
+<span id="cb48-3"><a href="evaluating-point-estimates-exercises.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="evaluating-point-estimates-exercises.html#cb48-4" aria-hidden="true" tabindex="-1"></a>n_repeated_samples <span class="ot">&lt;-</span> <span class="dv">10000</span>  <span class="co"># the number of times we repeat the &quot;study&quot;</span></span>
+<span id="cb48-5"><a href="evaluating-point-estimates-exercises.html#cb48-5" aria-hidden="true" tabindex="-1"></a>lambda_hat <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_repeated_samples)  <span class="co"># a container </span></span>
+<span id="cb48-6"><a href="evaluating-point-estimates-exercises.html#cb48-6" aria-hidden="true" tabindex="-1"></a>mu_hat <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_repeated_samples)      <span class="co"># another container </span></span>
+<span id="cb48-7"><a href="evaluating-point-estimates-exercises.html#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_repeated_samples) {</span>
+<span id="cb48-8"><a href="evaluating-point-estimates-exercises.html#cb48-8" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rexp</span>(sample_size, <span class="at">rate =</span> lambda)</span>
+<span id="cb48-9"><a href="evaluating-point-estimates-exercises.html#cb48-9" aria-hidden="true" tabindex="-1"></a>  lambda_hat[i] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">mean</span>(x)</span>
+<span id="cb48-10"><a href="evaluating-point-estimates-exercises.html#cb48-10" aria-hidden="true" tabindex="-1"></a>   mu_hat[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb48-11"><a href="evaluating-point-estimates-exercises.html#cb48-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb48-12"><a href="evaluating-point-estimates-exercises.html#cb48-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-13"><a href="evaluating-point-estimates-exercises.html#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="co"># long-run average</span></span>
+<span id="cb48-14"><a href="evaluating-point-estimates-exercises.html#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(lambda_hat)  <span class="co"># hum... seems too big</span></span></code></pre></div>
+<pre><code>## [1] 0.6240386</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="evaluating-point-estimates-exercises.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mu_hat)      <span class="co"># just right!</span></span></code></pre></div>
+<pre><code>## [1] 2.004443</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="evaluating-point-estimates-exercises.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb52-2"><a href="evaluating-point-estimates-exercises.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb52-3"><a href="evaluating-point-estimates-exercises.html#cb52-3" aria-hidden="true" tabindex="-1"></a>gg1 <span class="ot">&lt;-</span> <span class="fu">qplot</span>(<span class="at">x =</span> lambda_hat) <span class="sc">+</span> </span>
+<span id="cb52-4"><a href="evaluating-point-estimates-exercises.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> lambda) <span class="sc">+</span> </span>
+<span id="cb52-5"><a href="evaluating-point-estimates-exercises.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(lambda_hat), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb52-6"><a href="evaluating-point-estimates-exercises.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of lambda-hat in Repeated Samples&quot;</span>,</span>
+<span id="cb52-7"><a href="evaluating-point-estimates-exercises.html#cb52-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Black Line Shows Actual lambda; Red Line Shows E(lambda-hat)&quot;</span>)</span>
+<span id="cb52-8"><a href="evaluating-point-estimates-exercises.html#cb52-8" aria-hidden="true" tabindex="-1"></a>gg2 <span class="ot">&lt;-</span> <span class="fu">qplot</span>(<span class="at">x =</span> mu_hat) <span class="sc">+</span> </span>
+<span id="cb52-9"><a href="evaluating-point-estimates-exercises.html#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span><span class="sc">/</span>lambda) <span class="sc">+</span> </span>
+<span id="cb52-10"><a href="evaluating-point-estimates-exercises.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(mu_hat), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb52-11"><a href="evaluating-point-estimates-exercises.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of mu-hat in Repeated Samples&quot;</span>,</span>
+<span id="cb52-12"><a href="evaluating-point-estimates-exercises.html#cb52-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Black Line Shows Actual mu; Red Line Shows E(lambda-mu)&quot;</span>)</span>
+<span id="cb52-13"><a href="evaluating-point-estimates-exercises.html#cb52-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-14"><a href="evaluating-point-estimates-exercises.html#cb52-14" aria-hidden="true" tabindex="-1"></a>gg1 <span class="sc">+</span> gg2</span></code></pre></div>
+<img src="inference_files/figure-html/unnamed-chunk-17-1.png" width="960" />
+</details>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mvue-or-bue-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="deriving-hypothesis-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

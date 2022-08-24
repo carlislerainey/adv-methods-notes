@@ -1,0 +1,9 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: section
+  config:
+    toc:
+      before: |
+        <li><a href="./">Advanced Political Methodology</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
