@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.4 Exercises | Statistical Modeling: A Tools Approach</title>
+  <meta name="description" content="Lecture notes covering the key tools of regression modeling in political science." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.4 Exercises | Statistical Modeling: A Tools Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes covering the key tools of regression modeling in political science." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.4 Exercises | Statistical Modeling: A Tools Approach" />
+  
+  <meta name="twitter:description" content="Lecture notes covering the key tools of regression modeling in political science." />
+  
+
+<meta name="author" content="Carlisle Rainey" />
+
+
+<meta name="date" content="2022-08-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="maximum-likelihood-1.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Political Methodology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Week 1<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="class-agenda..html"><a href="class-agenda..html"><i class="fa fa-check"></i><b>1.1</b> Class agenda.<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html"><i class="fa fa-check"></i><b>1.2</b> Maximum Likelihood<span></span></a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#example-bernoulli-distribution"><i class="fa fa-check"></i><b>1.2.1</b> Example: Bernoulli Distribution<span></span></a></li>
+<li class="chapter" data-level="1.2.2" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#example-poisson-distribution"><i class="fa fa-check"></i><b>1.2.2</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="1.2.3" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#remarks"><i class="fa fa-check"></i><b>1.2.3</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="1.2.4" data-path="maximum-likelihood.html"><a href="maximum-likelihood.html#example-beta-distribution"><i class="fa fa-check"></i><b>1.2.4</b> Example: Beta Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="the-invariance-property.html"><a href="the-invariance-property.html"><i class="fa fa-check"></i><b>1.3</b> The Invariance Property<span></span></a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="the-invariance-property.html"><a href="the-invariance-property.html#example-bernoulli-odds"><i class="fa fa-check"></i><b>1.3.1</b> Example: Bernoulli Odds<span></span></a></li>
+<li class="chapter" data-level="1.3.2" data-path="the-invariance-property.html"><a href="the-invariance-property.html#example-poisson-sd"><i class="fa fa-check"></i><b>1.3.2</b> Example: Poisson SD<span></span></a></li>
+<li class="chapter" data-level="1.3.3" data-path="the-invariance-property.html"><a href="the-invariance-property.html#example-beta-mean-and-variance"><i class="fa fa-check"></i><b>1.3.3</b> Example: Beta Mean and Variance<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html"><i class="fa fa-check"></i><b>1.4</b> The Parametric Bootstrap<span></span></a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html#example-toothpaste-cap-problm"><i class="fa fa-check"></i><b>1.4.1</b> Example: Toothpaste Cap Problm<span></span></a></li>
+<li class="chapter" data-level="1.4.2" data-path="the-parametric-bootstrap.html"><a href="the-parametric-bootstrap.html#example-beta-distribution-1"><i class="fa fa-check"></i><b>1.4.2</b> Example: Beta Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="sampling-distribution.html"><a href="sampling-distribution.html"><i class="fa fa-check"></i><b>1.5</b> Sampling Distribution<span></span></a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="sampling-distribution.html"><a href="sampling-distribution.html#example-the-toothpaste-cap-problem"><i class="fa fa-check"></i><b>1.5.1</b> Example: The Toothpaste Cap Problem<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="bias.html"><a href="bias.html"><i class="fa fa-check"></i><b>1.6</b> Bias<span></span></a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="bias.html"><a href="bias.html#example-bernoulli-distribution-1"><i class="fa fa-check"></i><b>1.6.1</b> Example: Bernoulli Distribution<span></span></a></li>
+<li class="chapter" data-level="1.6.2" data-path="bias.html"><a href="bias.html#example-poisson-distribution-1"><i class="fa fa-check"></i><b>1.6.2</b> Example: Poisson Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="consistency.html"><a href="consistency.html"><i class="fa fa-check"></i><b>1.7</b> Consistency<span></span></a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="consistency.html"><a href="consistency.html#example-illustrative"><i class="fa fa-check"></i><b>1.7.1</b> Example: Illustrative<span></span></a></li>
+<li class="chapter" data-level="1.7.2" data-path="consistency.html"><a href="consistency.html#example-bernoulli-odds-1"><i class="fa fa-check"></i><b>1.7.2</b> Example: Bernoulli Odds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="predictive-distribution.html"><a href="predictive-distribution.html"><i class="fa fa-check"></i><b>1.8</b> Predictive Distribution<span></span></a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="predictive-distribution.html"><a href="predictive-distribution.html#example-poisson-distribution-2"><i class="fa fa-check"></i><b>1.8.1</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="1.8.2" data-path="predictive-distribution.html"><a href="predictive-distribution.html#example-beta-distribution-2"><i class="fa fa-check"></i><b>1.8.2</b> Example: Beta Distribution<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>1.9</b> Exercises<span></span></a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="exercises.html"><a href="exercises.html#questions-about-the-exponential-distribution"><i class="fa fa-check"></i><b>1.9.1</b> Questions About the Exponential Distribution<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="deriving-point-estimates.html"><a href="deriving-point-estimates.html"><i class="fa fa-check"></i><b>2</b> Deriving Point Estimates<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html"><i class="fa fa-check"></i><b>2.1</b> Bayesian Inference<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html#mechanics"><i class="fa fa-check"></i><b>2.1.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="bayesian-inference.html"><a href="bayesian-inference.html#example-poisson-distribution-3"><i class="fa fa-check"></i><b>2.1.2</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="bayesian-inference.html"><a href="bayesian-inference.html#remarks-1"><i class="fa fa-check"></i><b>2.1.3</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="bayesian-inference.html"><a href="bayesian-inference.html#exercises-1"><i class="fa fa-check"></i><b>2.1.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="method-of-moments.html"><a href="method-of-moments.html"><i class="fa fa-check"></i><b>2.2</b> Method of Moments<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="method-of-moments.html"><a href="method-of-moments.html#mechanics-1"><i class="fa fa-check"></i><b>2.2.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="method-of-moments.html"><a href="method-of-moments.html#example-gamma-distribution"><i class="fa fa-check"></i><b>2.2.2</b> Example: Gamma Distribution<span></span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="method-of-moments.html"><a href="method-of-moments.html#example-toothpaste-cap-problem"><i class="fa fa-check"></i><b>2.2.3</b> Example: Toothpaste Cap Problem<span></span></a></li>
+<li class="chapter" data-level="2.2.4" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average"><i class="fa fa-check"></i><b>2.2.4</b> Example: Population Average<span></span></a></li>
+<li class="chapter" data-level="2.2.5" data-path="method-of-moments.html"><a href="method-of-moments.html#example-population-average-and-sd"><i class="fa fa-check"></i><b>2.2.5</b> Example: Population Average and SD<span></span></a></li>
+<li class="chapter" data-level="2.2.6" data-path="method-of-moments.html"><a href="method-of-moments.html#example-german-tank-problem"><i class="fa fa-check"></i><b>2.2.6</b> Example: German Tank Problem<span></span></a></li>
+<li class="chapter" data-level="2.2.7" data-path="method-of-moments.html"><a href="method-of-moments.html#remarks-2"><i class="fa fa-check"></i><b>2.2.7</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="2.2.8" data-path="method-of-moments.html"><a href="method-of-moments.html#exercises-2"><i class="fa fa-check"></i><b>2.2.8</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html"><i class="fa fa-check"></i><b>2.3</b> Maximum Likelihood<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#mechanics-2"><i class="fa fa-check"></i><b>2.3.1</b> Mechanics<span></span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#example-toothpaste-cap-problem-1"><i class="fa fa-check"></i><b>2.3.2</b> Example: Toothpaste Cap Problem<span></span></a></li>
+<li class="chapter" data-level="2.3.3" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#example-german-tank-problem-1"><i class="fa fa-check"></i><b>2.3.3</b> Example: German Tank Problem<span></span></a></li>
+<li class="chapter" data-level="2.3.4" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#example-poisson-distribution-4"><i class="fa fa-check"></i><b>2.3.4</b> Example: Poisson Distribution<span></span></a></li>
+<li class="chapter" data-level="2.3.5" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#remarks-3"><i class="fa fa-check"></i><b>2.3.5</b> Remarks<span></span></a></li>
+<li class="chapter" data-level="2.3.6" data-path="maximum-likelihood-1.html"><a href="maximum-likelihood-1.html#exercises-3"><i class="fa fa-check"></i><b>2.3.6</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="exercises-4.html"><a href="exercises-4.html"><i class="fa fa-check"></i><b>2.4</b> Exercises<span></span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Modeling: A Tools Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercises-4" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Exercises<a href="exercises-4.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:bayes-exponential" class="exercise"><strong>Exercise 2.1  </strong></span>Suppose we collect <span class="math inline">\(N\)</span> random samples <span class="math inline">\(x = \{x_1, x_2, ..., x_N\}\)</span> and model each draw as a random variable <span class="math inline">\(X \sim \text{exponential}(\lambda)\)</span> with pdf <span class="math inline">\(f(x_n | \lambda) = \lambda e^{-\lambda x_n}\)</span>. Find the posterior distribution of <span class="math inline">\(\lambda\)</span> for the gamma prior distribution. Hint: the gamma distribution is the conjugate prior for the exponential likelihood.</p>
+</div>
+<details>
+<summary>
+Hint
+</summary>
+Use the Poisson example from above. Because they share a prior, the math works quite similarly.
+</details>
+<details>
+<summary>
+Solution
+</summary>
+<p><span class="math display">\[
+\begin{aligned}
+\text{exponential likelihood: } f(x \mid \lambda) &amp;= \prod_{n = 1}^N \lambda e^{-\lambda x_n} \\
+&amp;= \lambda^N e^{-\lambda \sum_{n = 1}^N x_n}
+\end{aligned}
+\]</span>
+<span class="math display">\[
+\text{Gamma prior: } f( \lambda; \alpha^*, \beta^*) = \frac{{\beta^*}^{\alpha^*}}{\Gamma(\alpha^*)} \lambda^{\alpha^* - 1} e^{-\beta^*\lambda}
+\]</span>
+<span class="math display">\[
+\begin{aligned}
+\text{Gamma posterior: } f( \lambda  \mid x) &amp;= \frac{\left(  \lambda^N e^{-\lambda \sum_{n = 1}^N x_n}\right) \times \left( \left[ \frac{{\beta^*}^{\alpha^*}}{\Gamma(\alpha^*)} \right] \lambda^{\alpha^* - 1} e^{-\beta^*\lambda}\right)}{C_1} \\
+&amp;= \frac{\left(  \lambda^N e^{-\lambda \sum_{n = 1}^N x_n}\right) \times \left(  \lambda^{\alpha^* - 1} e^{-\beta^*\lambda}\right)}{C_2} \\
+&amp;= \frac{ \lambda^{ \overbrace{\left[ \alpha^* + N \right]}^{\alpha^\prime} - 1} e^{- \overbrace{\left[ \beta^* + \sum_{n = 1}^N x_n \right]}^{\beta^\prime} \lambda}}{C_2} \\
+&amp; =  \frac{{\beta^\prime}^{\alpha^\prime}}{\Gamma(\alpha^\prime)}  \lambda^{\alpha^\prime - 1} e^{-\beta^\prime\lambda}\text{ where } \alpha^\prime = \alpha^* +  N \text{ and } \beta^\prime = \beta^* + \sum_{n = 1}^N x_n
+\end{aligned}
+\]</span></p>
+</details>
+<div class="exercise">
+<p><span id="exr:govt-duration-bayes" class="exercise"><strong>Exercise 2.2  </strong></span>You are a researcher interesting in government duration in parliamentary democracies. You decide to model duration as an exponential distribution. To estimate the parameter <span class="math inline">\(\lambda\)</span> of the exponential distribution, you collect data on the last five UK governments.</p>
+<ul>
+<li>The first Johnson ministry lasted 142 days.</li>
+<li>The second May ministry lasted 773 days.</li>
+<li>The first May ministry lasted 333 days.</li>
+<li>The second Cameron ministry lasted 432 days.</li>
+<li>The first Cameron ministry (Cameron-Clegg coalition) lasted 1,823 days.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Rescale the data to years–that helps with the interpretation.</li>
+<li>Create three gamma prior distributions.
+<ol style="list-style-type: lower-alpha">
+<li>One that describes your prior beliefs.</li>
+<li>One that’s weakly informative.</li>
+<li>One that’s as uninformative as possible.</li>
+</ol></li>
+<li>Use what you learned from Exercise <a href="exercises-4.html#exr:bayes-exponential">2.1</a> to plot each prior and posterior.</li>
+<li>For each posterior, compute the mean, median, and mode of <span class="math inline">\(\lambda\)</span>. Interpret. Hint: <span class="math inline">\(\lambda\)</span> is a rate. If the durations are measured in years, then it’s the failures per year. The expected duration in years is <span class="math inline">\(\frac{1}{\lambda}\)</span>, but remember that <span class="math inline">\(E \left( \frac{1}{\lambda}\right) \neq \frac{1} {E(\lambda)}\)</span>. If you want to find the posterior distribution of the expected duration (rather than the failures/year), then you can simulate many draws of <span class="math inline">\(\lambda\)</span> from the posterior and transform each draw into <span class="math inline">\(\frac{1}{\lambda}\)</span>. The mean of the transformed draws is the posterior mean of the expected duration.</li>
+<li>Assess the model. Do you think we have a good model? Hint: the exponential distribution is memoryless. Does that make sense in this appliation?</li>
+</ol>
+</div>
+<details>
+<summary>
+Solutions
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="exercises-4.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="exercises-4.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="exercises-4.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-4"><a href="exercises-4.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-5"><a href="exercises-4.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="exercises-4.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed for reproducibility</span></span>
+<span id="cb1-7"><a href="exercises-4.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb1-8"><a href="exercises-4.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="exercises-4.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># choose informative  prior distribution</span></span>
+<span id="cb1-10"><a href="exercises-4.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># - I expect govts to last, on avg, 3 years, so fail at a </span></span>
+<span id="cb1-11"><a href="exercises-4.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   rate of lambda = 1/3 per year, give-or-take about 1/10.</span></span>
+<span id="cb1-12"><a href="exercises-4.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># - I know that the mean of the gamma is a/b and the sd is </span></span>
+<span id="cb1-13"><a href="exercises-4.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   sqrt{a/(b^2)}, so I set a/b = 1/3 and sqrt{a/(b^2)} = 1/10</span></span>
+<span id="cb1-14"><a href="exercises-4.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   and solve. You could also just experiment with different </span></span>
+<span id="cb1-15"><a href="exercises-4.html#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   values</span></span>
+<span id="cb1-16"><a href="exercises-4.html#cb1-16" aria-hidden="true" tabindex="-1"></a>alpha_inf <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">/</span><span class="dv">9</span></span>
+<span id="cb1-17"><a href="exercises-4.html#cb1-17" aria-hidden="true" tabindex="-1"></a>beta_inf <span class="ot">&lt;-</span>  <span class="dv">3</span><span class="sc">*</span>alpha_inf</span>
+<span id="cb1-18"><a href="exercises-4.html#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="exercises-4.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># plot informative prior</span></span>
+<span id="cb1-20"><a href="exercises-4.html#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="exercises-4.html#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dgamma, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape =</span> alpha_inf, <span class="at">rate =</span> beta_inf)) <span class="sc">+</span> </span>
+<span id="cb1-22"><a href="exercises-4.html#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;prior distribution&quot;</span>, <span class="at">x =</span> <span class="st">&quot;lambda; expected failures/year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;prior density&quot;</span>)</span></code></pre></div>
+<p><img src="notes_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="exercises-4.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># choose **weakly informative** prior distribution</span></span>
+<span id="cb2-2"><a href="exercises-4.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># - For this, I repeated the same process, but doubled my</span></span>
+<span id="cb2-3"><a href="exercises-4.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   give-or-take from 1/10 to 1/5,</span></span>
+<span id="cb2-4"><a href="exercises-4.html#cb2-4" aria-hidden="true" tabindex="-1"></a>alpha_weak <span class="ot">&lt;-</span> <span class="dv">25</span><span class="sc">/</span><span class="dv">9</span></span>
+<span id="cb2-5"><a href="exercises-4.html#cb2-5" aria-hidden="true" tabindex="-1"></a>beta_weak <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>alpha_weak</span>
+<span id="cb2-6"><a href="exercises-4.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="exercises-4.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot weakly informative prior</span></span>
+<span id="cb2-8"><a href="exercises-4.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="exercises-4.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dgamma, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape =</span> alpha_weak, <span class="at">rate =</span> beta_weak)) <span class="sc">+</span> </span>
+<span id="cb2-10"><a href="exercises-4.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;prior distribution&quot;</span>, <span class="at">x =</span> <span class="st">&quot;lambda; expected failures/year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;prior density&quot;</span>)</span></code></pre></div>
+<p><img src="notes_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="exercises-4.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># choose flattest prior distribution</span></span>
+<span id="cb3-2"><a href="exercises-4.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># - I just want to make this prior as close to uniform as possible.</span></span>
+<span id="cb3-3"><a href="exercises-4.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># - the failure rate (failures/year) is *surely* between 0 and 100</span></span>
+<span id="cb3-4"><a href="exercises-4.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   (lambda = 100 means that 100 governments are failing per year), </span></span>
+<span id="cb3-5"><a href="exercises-4.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   so I plot the prior from zero to 100--it&#39;s basically flat   </span></span>
+<span id="cb3-6"><a href="exercises-4.html#cb3-6" aria-hidden="true" tabindex="-1"></a>alpha_flat <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-7"><a href="exercises-4.html#cb3-7" aria-hidden="true" tabindex="-1"></a>beta_flat <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb3-8"><a href="exercises-4.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="exercises-4.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># plot flattish prior</span></span>
+<span id="cb3-10"><a href="exercises-4.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">100</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb3-11"><a href="exercises-4.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dgamma, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">shape =</span> alpha_flat, <span class="at">rate =</span> beta_flat)) <span class="sc">+</span> </span>
+<span id="cb3-12"><a href="exercises-4.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;prior distribution&quot;</span>, <span class="at">x =</span> <span class="st">&quot;lambda; expected failures/year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;prior density&quot;</span>)</span></code></pre></div>
+<p><img src="notes_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="exercises-4.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
+<span id="cb4-2"><a href="exercises-4.html#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">142</span>, <span class="dv">773</span>, <span class="dv">333</span>, <span class="dv">432</span>, <span class="dv">1823</span>)<span class="sc">/</span><span class="dv">365</span>  <span class="co"># rescale to years</span></span>
+<span id="cb4-3"><a href="exercises-4.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="exercises-4.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make a data frame with the posterior and prior parameters</span></span>
+<span id="cb4-5"><a href="exercises-4.html#cb4-5" aria-hidden="true" tabindex="-1"></a>posts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">prior_type =</span> <span class="fu">c</span>(<span class="st">&quot;Informative&quot;</span>, </span>
+<span id="cb4-6"><a href="exercises-4.html#cb4-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">&quot;Weakly Informative&quot;</span>,</span>
+<span id="cb4-7"><a href="exercises-4.html#cb4-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">&quot;Flat-ish&quot;</span>),</span>
+<span id="cb4-8"><a href="exercises-4.html#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">alpha_prior =</span> <span class="fu">c</span>(alpha_inf, </span>
+<span id="cb4-9"><a href="exercises-4.html#cb4-9" aria-hidden="true" tabindex="-1"></a>                                    alpha_weak,</span>
+<span id="cb4-10"><a href="exercises-4.html#cb4-10" aria-hidden="true" tabindex="-1"></a>                                    alpha_flat),</span>
+<span id="cb4-11"><a href="exercises-4.html#cb4-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">beta_prior =</span> <span class="fu">c</span>(beta_inf, </span>
+<span id="cb4-12"><a href="exercises-4.html#cb4-12" aria-hidden="true" tabindex="-1"></a>                                    beta_weak,</span>
+<span id="cb4-13"><a href="exercises-4.html#cb4-13" aria-hidden="true" tabindex="-1"></a>                                    beta_flat)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="exercises-4.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add posterior parameters</span></span>
+<span id="cb4-15"><a href="exercises-4.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">alpha_posterior =</span> alpha_prior <span class="sc">+</span> <span class="fu">length</span>(x),</span>
+<span id="cb4-16"><a href="exercises-4.html#cb4-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">beta_posterior =</span> beta_prior <span class="sc">+</span> <span class="fu">sum</span>(x)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-17"><a href="exercises-4.html#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create one row per parameter</span></span>
+<span id="cb4-18"><a href="exercises-4.html#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> alpha_prior<span class="sc">:</span>beta_posterior) <span class="sc">%&gt;%</span></span>
+<span id="cb4-19"><a href="exercises-4.html#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate parameter from distribution type</span></span>
+<span id="cb4-20"><a href="exercises-4.html#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(name, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;parameter&quot;</span>, <span class="st">&quot;distribution_type&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-21"><a href="exercises-4.html#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put parameters into separate columns</span></span>
+<span id="cb4-22"><a href="exercises-4.html#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> parameter, <span class="at">values_from =</span> value) <span class="sc">%&gt;%</span></span>
+<span id="cb4-23"><a href="exercises-4.html#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distribution_type =</span> <span class="fu">str_to_title</span>(distribution_type),</span>
+<span id="cb4-24"><a href="exercises-4.html#cb4-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">distribution_type =</span> <span class="fu">factor</span>(distribution_type, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Prior&quot;</span>, <span class="st">&quot;Posterior&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb4-25"><a href="exercises-4.html#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prior_type =</span> <span class="fu">factor</span>(prior_type, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Informative&quot;</span>, <span class="st">&quot;Weakly Informative&quot;</span>, <span class="st">&quot;Flat-ish&quot;</span>)))</span>
+<span id="cb4-26"><a href="exercises-4.html#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="exercises-4.html#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># compute point estimates and make a table</span></span>
+<span id="cb4-28"><a href="exercises-4.html#cb4-28" aria-hidden="true" tabindex="-1"></a>point_estimates <span class="ot">&lt;-</span> posts <span class="sc">%&gt;%</span> </span>
+<span id="cb4-29"><a href="exercises-4.html#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">#filter(distribution_type == &quot;posterior&quot;) %&gt;%</span></span>
+<span id="cb4-30"><a href="exercises-4.html#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(prior_type, distribution_type) <span class="sc">%&gt;%</span></span>
+<span id="cb4-31"><a href="exercises-4.html#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean =</span> alpha<span class="sc">/</span>beta,</span>
+<span id="cb4-32"><a href="exercises-4.html#cb4-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">median =</span> <span class="fu">median</span>(<span class="fu">rgamma</span>(<span class="dv">100000</span>, alpha, beta)),</span>
+<span id="cb4-33"><a href="exercises-4.html#cb4-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">mode =</span> (alpha <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>beta,</span>
+<span id="cb4-34"><a href="exercises-4.html#cb4-34" aria-hidden="true" tabindex="-1"></a>         <span class="at">mean_expected_duration =</span> <span class="fu">mean</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">rgamma</span>(<span class="dv">100000</span>, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta))) </span>
+<span id="cb4-35"><a href="exercises-4.html#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="exercises-4.html#cb4-36" aria-hidden="true" tabindex="-1"></a>point_estimates <span class="sc">%&gt;%</span></span>
+<span id="cb4-37"><a href="exercises-4.html#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>alpha, <span class="sc">-</span>beta) <span class="sc">%&gt;%</span></span>
+<span id="cb4-38"><a href="exercises-4.html#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(distribution_type, prior_type) <span class="sc">%&gt;%</span></span>
+<span id="cb4-39"><a href="exercises-4.html#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Prior</span><span class="st">`</span> <span class="ot">=</span> prior_type, </span>
+<span id="cb4-40"><a href="exercises-4.html#cb4-40" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Distribution</span><span class="st">`</span> <span class="ot">=</span> distribution_type,</span>
+<span id="cb4-41"><a href="exercises-4.html#cb4-41" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Mean of lambda</span><span class="st">`</span> <span class="ot">=</span> mean,</span>
+<span id="cb4-42"><a href="exercises-4.html#cb4-42" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Median of lambda</span><span class="st">`</span> <span class="ot">=</span> median,</span>
+<span id="cb4-43"><a href="exercises-4.html#cb4-43" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Mode of lambda</span><span class="st">`</span> <span class="ot">=</span> mode,</span>
+<span id="cb4-44"><a href="exercises-4.html#cb4-44" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Mean of 1/lambda</span><span class="st">`</span> <span class="ot">=</span> mean_expected_duration) <span class="sc">%&gt;%</span></span>
+<span id="cb4-45"><a href="exercises-4.html#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="13%" />
+<col width="15%" />
+<col width="17%" />
+<col width="15%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Prior</th>
+<th align="left">Distribution</th>
+<th align="right">Mean of lambda</th>
+<th align="right">Median of lambda</th>
+<th align="right">Mode of lambda</th>
+<th align="right">Mean of 1/lambda</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Informative</td>
+<td align="left">Prior</td>
+<td align="right">0.33</td>
+<td align="right">0.32</td>
+<td align="right">0.30</td>
+<td align="right">3.30</td>
+</tr>
+<tr class="even">
+<td align="left">Weakly Informative</td>
+<td align="left">Prior</td>
+<td align="right">0.33</td>
+<td align="right">0.29</td>
+<td align="right">0.21</td>
+<td align="right">4.70</td>
+</tr>
+<tr class="odd">
+<td align="left">Flat-ish</td>
+<td align="left">Prior</td>
+<td align="right">100.00</td>
+<td align="right">69.38</td>
+<td align="right">0.00</td>
+<td align="right">0.12</td>
+</tr>
+<tr class="even">
+<td align="left">Informative</td>
+<td align="left">Posterior</td>
+<td align="right">0.38</td>
+<td align="right">0.37</td>
+<td align="right">0.35</td>
+<td align="right">2.84</td>
+</tr>
+<tr class="odd">
+<td align="left">Weakly Informative</td>
+<td align="left">Posterior</td>
+<td align="right">0.43</td>
+<td align="right">0.42</td>
+<td align="right">0.38</td>
+<td align="right">2.65</td>
+</tr>
+<tr class="even">
+<td align="left">Flat-ish</td>
+<td align="left">Posterior</td>
+<td align="right">0.62</td>
+<td align="right">0.59</td>
+<td align="right">0.52</td>
+<td align="right">1.92</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="exercises-4.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot distributions</span></span>
+<span id="cb5-2"><a href="exercises-4.html#cb5-2" aria-hidden="true" tabindex="-1"></a>gg_posts <span class="ot">&lt;-</span> posts <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="exercises-4.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add in lambda values for which to compute the prior and posterior density</span></span>
+<span id="cb5-4"><a href="exercises-4.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(<span class="fu">data_frame</span>(<span class="at">lambda =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">length.out =</span> <span class="dv">100</span>)), </span>
+<span id="cb5-5"><a href="exercises-4.html#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">character</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="exercises-4.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># compute the posterior and prior density for each lambda</span></span>
+<span id="cb5-7"><a href="exercises-4.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">density =</span> <span class="fu">dgamma</span>(lambda, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta))</span>
+<span id="cb5-8"><a href="exercises-4.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="exercises-4.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gg_posts, <span class="fu">aes</span>(<span class="at">x =</span> lambda, <span class="at">y =</span> density, </span>
+<span id="cb5-10"><a href="exercises-4.html#cb5-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> prior_type, </span>
+<span id="cb5-11"><a href="exercises-4.html#cb5-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linetype =</span> distribution_type)) <span class="sc">+</span> </span>
+<span id="cb5-12"><a href="exercises-4.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="notes_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+</details>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="maximum-likelihood-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

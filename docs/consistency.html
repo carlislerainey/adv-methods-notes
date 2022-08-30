@@ -23,7 +23,7 @@
 <meta name="author" content="Carlisle Rainey" />
 
 
-<meta name="date" content="2022-08-24" />
+<meta name="date" content="2022-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-17"><a href="consistency.html#cb57-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">mean</span>(population)) <span class="sc">+</span> </span>
 <span id="cb57-18"><a href="consistency.html#cb57-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
 <span id="cb57-19"><a href="consistency.html#cb57-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
-<p><img src="notes_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="01-04-bias-and-consistency_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="example-bernoulli-odds-1" class="section level3 hasAnchor" number="1.7.2">
 <h3><span class="header-section-number">1.7.2</span> Example: Bernoulli Odds<a href="consistency.html#example-bernoulli-odds-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -264,12 +264,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb58-17"><a href="consistency.html#cb58-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.05</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span>)) <span class="sc">+</span> </span>
 <span id="cb58-18"><a href="consistency.html#cb58-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="dv">19</span>) <span class="sc">+</span> </span>
 <span id="cb58-19"><a href="consistency.html#cb58-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() </span></code></pre></div>
-<p><img src="notes_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="01-04-bias-and-consistency_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="consistency.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(results, <span class="fu">aes</span>(<span class="at">x =</span> sample_size, <span class="at">y =</span> ml_est)) <span class="sc">+</span> </span>
 <span id="cb59-2"><a href="consistency.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.05</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span>)) <span class="sc">+</span> </span>
 <span id="cb59-3"><a href="consistency.html#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span> </span>
 <span id="cb59-4"><a href="consistency.html#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
-<p><img src="notes_files/figure-html/unnamed-chunk-29-2.png" width="672" /></p>
+<p><img src="01-04-bias-and-consistency_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
 
 </div>
 </div>

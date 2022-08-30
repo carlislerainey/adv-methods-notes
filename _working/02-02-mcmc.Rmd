@@ -1,0 +1,199 @@
+```{r include=FALSE}
+library(tidyverse)
+```
+
+## MCMC
+
+MCMC, or Markov chain Monte Carlo, is a generic algorithm to sample from posterior distributions. There are many variants, and the details are largely beyond the scope of the class. For most applied problems, there's a default approach that's standard for the situation. For most of our cases, it will be HMC using Stan, for example.
+
+However, here is the key idea. 
+
+1. You hand the sampler your likelihood and prior.
+1. It explores the posterior in in a way such that subsequent draws are correlated.
+1. But if you run the sampler long enough (say 10,000 iterations), then you can treat the serially correlated samples as independent draws from the posterior distribution.
+
+These samplers allow us to skip the normalization step.
+
+### Example: Normal Model
+
+We consider the normal model. This is a useful model, because it has multiple parameters.
+
+The algebra is a bit tedious, so I just supply the results here.
+
+Suppose we have a data set $y = \{y_1, y_2, ..., y_N\}$ that $y_i \sim N(\mu, \sigma^2)$. The we use the normal distribution as the prior for $\mu$ (conditional on $\sigma$) and the (scaled) inverse-$\chi^2$ as the prior for $\sigma^2$. Note that the parameters flagged super-scripted/sub-scripted with $*$ are researcher-chosen parameters that determine the prior distribution.
+
+$$
+\begin{equation}
+\mu|\sigma^2 \sim N(\mu^*, \frac{\sigma^2}{\kappa^*})\\
+\sigma^2 \sim \text{Inv-}\chi^2 (\nu^*, {\sigma^2}^*)
+\end{equation}
+$$
+
+Notice that the prior for $\mu$ is *conditional* on $\sigma^2$. This conditionality flows into the posterior.
+
+It turns out that we have the following posterior.
+
+$$
+\begin{equation}
+\mu|\sigma^2, y \sim N(\mu^\prime, \frac{\sigma^2}{\kappa^\prime})\\
+\sigma^2 \sim \text{Inv-}\chi^2 (\nu^\prime, {\sigma^2}^\prime),
+\end{equation}
+$$
+where
+
+$$
+\begin{aligned}
+\mu^\prime  &= \frac{\kappa^*}{\kappa^* + N}\mu^* + \frac{N}{\kappa^* + N}\text{avg}(y)\\
+\kappa^\prime &= \kappa^* + N\\
+\nu^\prime &= \nu^* + N\\
+{\sigma^2}^\prime &= \frac{\nu^* {\sigma^2}^* + (N - 1)\text{Var(y)} + \frac{\kappa^* N}{\kappa^* + N}(\text{avg}(y) - \mu^*)^2}{\nu^\prime}
+\end{aligned}
+$$
+
+It's tedious to work out the closed-form solution due to the conditionality (but possible). However, it's quite easy to sample from these distribution. 
+
+Let's use the penguins data.
+
+```{r}
+data(penguins, package = 'palmerpenguins')
+
+penguins <- penguins %>%
+  mutate(bill_length_in = bill_length_mm/25.4) %>%
+  na.omit() %>%
+  glimpse()
+```
+
+Let's model the bill length (in in) using this normal model.
+
+I don't know much about penguins, but I would their bills vary about 2 ($\pm2$) inches from penguin to penguin (i.e., $\sigma^2 = 2^2 = 4$). So I want to set the mean of the inv-$\chi^2$ distribution to about $2^2 = 4$. I experimented with plots of the inv-$\chi^2$ pdf and settled on $\nu^* = 5$ and ${\sigma^2}^* = 0.2$.
+
+```{r}
+
+nu_star <- 5
+sigma2_star <- 0.2
+
+x <- seq(0, 10, length.out = 100)
+gg_data <- tibble(x) %>%
+  mutate(pdf = extraDistr::dinvchisq(x, nu = nu_star, tau = 1/sigma2_star))
+
+ggplot(gg_data, aes(x, pdf)) + 
+  geom_line()
+
+```
+
+I would guess that their bills are about 4 inches long, give or take 3 inches or so. Given that I think $\sigma$ is about 2, then I want $\mu^*$ and $\kappa^*$ to be about 2 and 1.3, which produces a prior of the mean of $\mu|\sigma^2 \sim N(2, 3 \approx \frac{2^2}{1.3})$.
+
+Sampling from this posteriors is a little bit trickier. We have to sample a value of $\sigma^2$ first, and then sample a value of $\mu$ conditional on that value of $\sigma^2$. We repeat until we are satisfied with our sample size.
+
+```{r}
+
+# data
+N <- length(penguins$bill_length_in)
+avg_y <- mean(penguins$bill_length_in)
+var_y <- var(penguins$bill_length_in)
+
+# prior parameters
+mu_star <- 4
+kappa_star <- 1.3
+nu_star <- 5
+sigma2_star <- 0.2
+
+# posterior parameters
+mu_prime <- (kappa_star/(kappa_star + N))*mu_star + (N/(kappa_star + N))*avg_y
+kappa_prime <- kappa_star + N
+nu_prime <- nu_star + N
+sigma2_prime <- (nu_star*sigma2_star + (N - 1)*var_y + ((kappa_star*N)/(kappa_star + N))*(avg_y - mu_star)^2)/nu_prime
+
+# simulation
+n_sims <- 100
+post_sims <- matrix(NA, nrow = n_sims, ncol = 2)
+for (i in 1:100) {
+  # sample sigma2
+  sigma2_tilde_i <- extraDistr::rinvchisq(1, nu = nu_prime, tau = 1/sigma2_prime)
+  # sample mu, conditional on the just-sampled sigma2
+  mu_tilde_i <- rnorm(1, mu_prime, sigma2_tilde_i/kappa_prime)
+  # store
+  post_sims[i, 1] <- sigma2_tilde_i
+  post_sims[i, 2] <- mu_tilde_i
+}
+
+plot(post_sims)
+```
+
+$$
+\begin{aligned}
+\mu^\prime  &= \frac{\kappa^*}{\kappa^* + N}\mu^* + \frac{N}{\kappa^* + N}\text{avg}(y)\\
+\kappa^\prime &= \kappa^* + N\\
+\nu^\prime &= \nu^* + N\\
+{\sigma^2}^\prime &= \frac{\nu^* {\sigma^2}^* + (N - 1)\text{Var(y)} + \frac{\kappa^* N}{\kappa^* + N}(\text{avg}(y) - \mu^*)^2}{\nu^\prime}
+\end{aligned}
+$$
+
+
+## Metropolis Algorithm
+
+Suppose that you wanted to use a non-conjugate prior for the normal distribution above. Perhaps you want to use a Cauchy prior for $mu$ and $\log \sigma$. We can really easily write this unnormallized log-posterior in R.
+
+```{r}
+post <- function(par, y) {
+  mu = par[1]
+  log_sigma = par[2]
+  sum(dnorm(y, mu, exp(log_sigma), log = TRUE)) + dcauchy(mu, 10, 1, log = TRUE) + dcauchy(log_sigma, 0, 1, log = TRUE)  
+}
+
+y <- c(1, 2, 3, 4, 5)
+mcmcpack_out <- MCMCpack::MCMCmetrop1R(post, theta.init = c(1, 1), y = y, mcmc = 500000) 
+
+post_sims <- mcmcpack_out %>%
+  as_tibble() %>%
+  rename(mu_tilde = V1, log_sigma_tilde = V2) %>%
+  mutate(sigma_tilde = exp(log_sigma_tilde), 
+         iter = 1:n(), 
+         anim_group = iter %% 10000 - iter) %>%
+  glimpse()
+
+# library(gganimate)
+# 
+# anim <- ggplot(post_sims, aes(mu_tilde, sigma_tilde)) +
+#   #geom_path(alpha = 0.05) +
+#   geom_point(alpha = 0.05) + 
+#   transition_manual(anim_group, cumulative = TRUE)
+# animate(anim, duration = 10)
+```
+
+
+## Hamiltonian Monte Carlo
+
+```{r}
+library(rstan)
+scode <- "
+data {
+  int<lower = 1> N;  // number of obervations
+  vector[N] y;       // observed outcomes
+}
+parameters {
+  real mu;
+  real log_sigma;
+} 
+transformed parameters {
+  real<lower = 0> sigma;
+  sigma = exp(log_sigma);
+}
+model {
+  mu ~ cauchy(10, 1);
+  log_sigma ~ cauchy(0, 1);
+  y ~ normal(mu, sigma);
+} 
+"
+y <- c(1, 2, 3, 4, 5)
+
+stan_data <- list(y = y, N = length(y))
+fit1 <- stan(model_code = scode, 
+             data = stan_data,
+             iter = 10000, verbose = FALSE) 
+print(fit1)
+
+
+mean(post_sims$mu_tilde)
+```
+```

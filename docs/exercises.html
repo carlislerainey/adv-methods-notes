@@ -23,7 +23,7 @@
 <meta name="author" content="Carlisle Rainey" />
 
 
-<meta name="date" content="2022-08-24" />
+<meta name="date" content="2022-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -239,10 +239,10 @@ Solution
 </ol>
 </details>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 1.2  </strong></span>Suppose a data set <code>x &lt;- c(0.306, 0.023, 0.0471, 0.042, 0.227)</code>. Model this data set using an exponential distribution and estimate the rate <span class="math inline">\(\lambda\)</span> using maximum likelihood. Find the estimates in two ways. First, compute the ML estimates using the analytical solution you found above. Second, derive the log-likelihood function, plot it, and use <code>optim()</code> to find the maximum. Show that the two solutions agree.</p>
+<p><span id="exr:unnamed-chunk-1" class="exercise"><strong>Exercise 1.2  </strong></span>Suppose a data set <code>x &lt;- c(0.306, 0.023, 0.0471, 0.042, 0.227)</code>. Model this data set using an exponential distribution and estimate the rate <span class="math inline">\(\lambda\)</span> using maximum likelihood. Find the estimates in two ways. First, compute the ML estimates using the analytical solution you found above. Second, derive the log-likelihood function, plot it, and use <code>optim()</code> to find the maximum. Show that the two solutions agree.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-40" class="exercise"><strong>Exercise 1.3  </strong></span>Load the <code>cancer</code> data frame from the survival package in R using <code>data(cancer, package="survival")</code>. Estimate both the rate and the mean. Use the parametric bootstrap to obtain a 95% confidence interval for each. Use the predictive distribution to evaluate the fit of the model. Do the simulated data sets seems to match the observed data sets?</p>
+<p><span id="exr:unnamed-chunk-2" class="exercise"><strong>Exercise 1.3  </strong></span>Load the <code>cancer</code> data frame from the survival package in R using <code>data(cancer, package="survival")</code>. Model the variable <code>time</code> using an exponential distribution. Estimate both the rate and the mean. Use the parametric bootstrap to obtain a 95% confidence interval for each. Use the predictive distribution to evaluate the fit of the model. Do the simulated data sets seems to match the observed data sets?</p>
 </div>
 <!--- # remove for exam
 ::: {.exercise #ml-govt-duration}
@@ -253,20 +253,20 @@ Obtain the data for King, Alta, Burns, and Laver (2008) from Dataverse: https://
 :::
 --->
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 1.4  </strong></span>Obtain the data for Barrilleaux and Rainey (2014) from GitHub: <a href="https://github.com/carlislerainey/aca-opinion/blob/master/Data/mrp_est.csv" class="uri">https://github.com/carlislerainey/aca-opinion/blob/master/Data/mrp_est.csv</a>. Find the file <code>mrp_est.csv</code>. The variable <code>percent_supporting_expansion</code> gives the the percent of each state that supports expanding Medicaid under the ACA.</p>
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 1.4  </strong></span>Obtain the data for Barrilleaux and Rainey (2014) from GitHub: <a href="https://github.com/carlislerainey/aca-opinion/blob/master/Data/mrp_est.csv" class="uri">https://github.com/carlislerainey/aca-opinion/blob/master/Data/mrp_est.csv</a>. Find the file <code>mrp_est.csv</code>. The variable <code>percent_supporting_expansion</code> gives the the percent of each state that supports expanding Medicaid under the ACA.</p>
 <ol style="list-style-type: decimal">
 <li>Model the distribution of <em>proportions</em> (you’ll need to transform the variable from a percent to a proportion) as a beta distribution. Estimate the two shape parameters using maximum likelihood. Transform these estimates into estimates of the mean and SD. Compute a 95% confidence interval for the mean and SD using the parametric bootstap.</li>
 <li>Simulate fake data from the predictive distribution and graphically compare these draws to the observed values. How do the observed data deviate from the model? Compare the the observed and simulated distributions in several ways, such as histograms, ecdf plots, two-number summaries, five-number summaries, etc. Look for ways that the simulated data sets consistently deviate from the observed.</li>
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-42" class="exercise"><strong>Exercise 1.5  </strong></span>Suppose a discrete uniform distribution from 0 to <span class="math inline">\(K\)</span>. The pdf is <span class="math inline">\(f(x; K) = \frac{1}{K}\)</span> for <span class="math inline">\(x \in \{0, 1, ..., K\}\)</span>. Suppose I have three samples from the distribution: 676, 459, and 912. Find the ML estimate of <span class="math inline">\(K\)</span>.</p>
+<p><span id="exr:unnamed-chunk-4" class="exercise"><strong>Exercise 1.5  </strong></span>Suppose a discrete uniform distribution from 0 to <span class="math inline">\(K\)</span>. The pdf is <span class="math inline">\(f(x; K) = \frac{1}{K}\)</span> for <span class="math inline">\(x \in \{0, 1, ..., K\}\)</span>. Suppose I have three samples from the distribution: 676, 459, and 912. Find the ML estimate of <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-43" class="exercise"><strong>Exercise 1.6  </strong></span><strong>DeGroot and Schervish, q. 9, p. 425.</strong> Suppose a distribution <span class="math inline">\(f(x; \theta) = \theta x^{\theta - 1}\)</span> for <span class="math inline">\(0 &lt; x &lt; 1\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. Find the ML estimator of <span class="math inline">\(\theta\)</span>.</p>
+<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 1.6  </strong></span><strong>DeGroot and Schervish, q. 9, p. 425.</strong> Suppose a distribution <span class="math inline">\(f(x; \theta) = \theta x^{\theta - 1}\)</span> for <span class="math inline">\(0 &lt; x &lt; 1\)</span> and <span class="math inline">\(\theta &gt; 0\)</span>. Find the ML estimator of <span class="math inline">\(\theta\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-44" class="exercise"><strong>Exercise 1.7  </strong></span>Remember that the estimate <span class="math inline">\(\hat{\lambda} = \text{avg}(y)\)</span> for the Poisson distribution is unbiased. Remember that <span class="math inline">\(E(y) = \lambda\)</span> and <span class="math inline">\(\text{SD}(y)\)</span> is <span class="math inline">\(\sqrt{\lambda}\)</span>. By the invariance properity, the ML estimator of <span class="math inline">\(SD(y) = \sqrt{\hat{\lambda}}\)</span>. Use a Monte Carlo simulation to assess whether (and how much) this estimator of the SD is biased. Be sure to experiment with the sample size of y (e.g., N = 5, N = 200, etc.), but use a large number of Monte Carlo simulations (e.g., 100,000).</p>
+<p><span id="exr:unnamed-chunk-6" class="exercise"><strong>Exercise 1.7  </strong></span>Remember that the estimate <span class="math inline">\(\hat{\lambda} = \text{avg}(y)\)</span> for the Poisson distribution is unbiased. Remember that <span class="math inline">\(E(y) = \lambda\)</span> and <span class="math inline">\(\text{SD}(y)\)</span> is <span class="math inline">\(\sqrt{\lambda}\)</span>. By the invariance properity, the ML estimator of <span class="math inline">\(SD(y) = \sqrt{\hat{\lambda}}\)</span>. Use a Monte Carlo simulation to assess whether (and how much) this estimator of the SD is biased. Be sure to experiment with the sample size of y (e.g., N = 5, N = 200, etc.), but use a large number of Monte Carlo simulations (e.g., 100,000).</p>
 </div>
 
 </div>
