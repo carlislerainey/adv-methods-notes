@@ -1,7 +1,7 @@
 --- 
 title: 'Statistical Modeling: A Tools Approach'
 author: "Carlisle Rainey"
-date: "2022-08-30"
+date: "2022-09-07"
 output: pdf_document
 geometry: margin=2cm
 documentclass: book
@@ -15,9 +15,9 @@ description: Lecture notes covering the key tools of regression modeling in poli
 site: bookdown::bookdown_site
 ---
 
-# Week 1
+# Week 1: Maximum Likelihood
 
-## Class agenda.
+## Class agenda
 
 **Goal of the class** Make you competent users and consumers (applied and methods papers) of methods beyond least-squares. I'm deliberately avoiding causal-inference methods (matching, DID, etc) because we have a class that covers those specifically that we're offering regularly. I want you to learn a lot about specific tools, but also develop the skills to go and learn more on your own.
 

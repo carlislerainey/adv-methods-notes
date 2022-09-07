@@ -1,6 +1,6 @@
 
 
-# Week 2
+# Week 2: Bayesian Inference
 
 This week, we introduce the following tools.
 
@@ -123,6 +123,10 @@ $$
 Now we plug in the likelihood, plug in the prior, and denote the normalizing constant as $C_1$ to remind ourselves that it's just a constant.
 
 $$
+\displaystyle f(\pi \mid x) = \frac{\left[ \pi^{k} (1 - \pi)^{(N - k) }\right] \times \left[ \frac{1}{B(\alpha^*, \beta^*)} \pi^{\alpha^* - 1}(1 - \pi)^{\beta^* - 1} \right]}{ C_1} \\
+$$
+
+$$
 \text{the posterior: } \displaystyle \underbrace{f(\pi \mid x)}_{\text{posterior}} = \frac{\overbrace{\left[ \pi^{k} (1 - \pi)^{(N - k) }\right] }^{\text{likelihood}} \times \overbrace{ \left[ \frac{1}{B(\alpha^*, \beta^*)} \pi^{\alpha^* - 1}(1 - \pi)^{\beta^* - 1} \right] }^{\text{prior}}}{\displaystyle \underbrace{C_1}_{\text{normalizing constant}}} \\
 $$
 
@@ -143,6 +147,9 @@ Recalling that $x^a \times x^b = x^{a + b}$, we combine the powers.
 
 $$
 \text{the posterior: } \displaystyle \underbrace{f(\pi \mid x)}_{\text{posterior}} = \frac{\left[ \pi^{(\alpha^* + k) - 1} \right] \times  \left[ (1 - \pi)^{[\beta^* + (N - k)] - 1} \right] }{ C_2} \\
+$$
+$$
+\displaystyle f(\theta \mid x) = \frac{f(x \mid \theta) \times f(\theta)}{\displaystyle \int_{-\infty}^\infty f(x \mid \theta)f(\theta) d\theta}
 $$
 
 Because we're clever, we notice that this is *almost* a beta distribution with $\alpha = (\alpha^* + k)$ and $\beta = [\beta^* + (N - k)]$. If $C_2 = B(\alpha^* + k, \beta^* + (N - k))$, then the posterior is *exactly* a $\text{beta}(\alpha^* + k, \beta^* + [N - k]))$ distribution. 
@@ -388,7 +395,7 @@ median(post_sims)
 ## [1] 1.59919
 ```
 
-### Remarks
+## Remarks
 
 Bayesian inference presents two difficulties. 
 
